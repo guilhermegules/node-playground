@@ -1,0 +1,16 @@
+{
+  "name": "youtube-api-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "google-auth-library": "^5.10.1",
+    "googleapis": "^48.0.0"
+  }
+}
