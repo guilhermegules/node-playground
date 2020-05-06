@@ -7,7 +7,7 @@ server.use(jsonServer.bodyParser)
 server.use(middlewares)
 
 server.listen(port, () => {
- console.log('JSON Server is running')
+  console.log('JSON Server is running')
 })
 
 server.get('/users', (req, res) => {
@@ -15,4 +15,4 @@ server.get('/users', (req, res) => {
     const users = require('./users/index')
     res.status(200).jsonp(users())
   }
- })
+})
