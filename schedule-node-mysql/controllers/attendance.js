@@ -1,9 +1,13 @@
+const AttendanceDTO = require("../models/attendance.model");
+
 module.exports = (app) => {
-  app.get("/attendance", (request, response) => {
+  app.get("/attendance", (_, response) => {
     response.send("First get :D");
   });
 
   app.post("/attendance", (request, response) => {
-    response.send(request.body);
+    AttendanceDTO.add(request.body);
+
+    response.status(201).send(request.body);
   });
 };

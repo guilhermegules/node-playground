@@ -14,13 +14,19 @@ describe("attendance controller", () => {
       .post("/attendance")
       .expect((res) => {
         res.body = {
-          test: "some test value",
+          client: "client",
+          pet: "pet",
+          status: "status",
+          comments: "comments",
         };
       })
       .expect(
-        200,
+        201,
         {
-          test: "some test value",
+          client: "client",
+          pet: "pet",
+          status: "status",
+          comments: "comments",
         },
         done
       );

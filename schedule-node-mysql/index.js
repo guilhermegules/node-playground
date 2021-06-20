@@ -1,16 +1,17 @@
 const server = require("./config/express-config");
 const connection = require("./db/connection");
+const Tables = require("./db/tables");
 
 connection.connect((error) => {
   if (error) {
-    console.log("MySQL connection error", error);
-  } else {
-    console.log("Sucessfuly connected");
+    throw new Error(`MySQL connection error ${error}`);
   }
-});
 
-server.listen(process.env.API_PORT, () => {
-  console.log(
-    `Server is running on port http://localhost:${process.env.API_PORT}`
-  );
+  Tables.init(connection);
+
+  server.listen(process.env.API_PORT, () => {
+    console.log(
+      `Server is running on port http://localhost:${process.env.API_PORT}`
+    );
+  });
 });
