@@ -11,6 +11,8 @@ class Tables {
         client VARCHAR(50) NOT NULL, 
         pet VARCHAR(20), service VARCHAR(20) NOT NULL, 
         status VARCHAR(20) NOT NULL, 
+        attendanceDate DATETIME NOT NULL,
+        createdDate DATETIME NOT NULL,
         comments text, 
         PRIMARY KEY(id)
       )`;
