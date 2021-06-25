@@ -6,29 +6,24 @@ describe("attendance controller", () => {
     const response = await request(app).get("/attendance").expect(200);
 
     expect(response.status).toBe(200);
-
-    expect(response.text).toBe("First get :D");
   });
   it("should send any body on [/attendance] endpoint", (done) => {
-    request(app)
+    const response = request(app)
       .post("/attendance")
-      .expect((res) => {
-        res.body = {
-          client: "client",
-          pet: "pet",
-          status: "status",
-          comments: "comments",
-        };
+      .send({
+        client: "client",
+        pet: "pet",
+        status: "status",
+        comments: "comments",
+        attendanceDate: "2021/10/10",
+        createdDate: new Date(2021, 10, 9),
       })
-      .expect(
-        201,
-        {
-          client: "client",
-          pet: "pet",
-          status: "status",
-          comments: "comments",
-        },
-        done
-      );
+      .expect(201, () => {
+        done();
+      });
+
+    expect(response.url.includes("/attendance")).toBe(true);
+    expect(response.method).toBe("POST");
+    expect(response.header).toEqual({ "Content-Type": "application/json" });
   });
 });

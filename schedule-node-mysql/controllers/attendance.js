@@ -2,12 +2,22 @@ const AttendanceDTO = require("../models/attendance.model");
 
 module.exports = (app) => {
   app.get("/attendance", (_, response) => {
-    response.send("First get :D");
+    AttendanceDTO.list(response);
+  });
+
+  app.get("/attendance/:id", (request, response) => {
+    AttendanceDTO.getById(parseInt(request.params.id), response);
   });
 
   app.post("/attendance", (request, response) => {
-    AttendanceDTO.add(request.body);
+    AttendanceDTO.add(request.body, response);
+  });
 
-    response.status(201).send(request.body);
+  app.patch("/attendance/:id", (request, response) => {
+    AttendanceDTO.update(parseInt(request.params.id), request.body, response);
+  });
+
+  app.delete("/attendance/:id", (request, response) => {
+    AttendanceDTO.delete(parseInt(request.params.id), response);
   });
 };
