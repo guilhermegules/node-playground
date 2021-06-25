@@ -10,6 +10,14 @@
 
 - Unit tests, run `npm test`
 
+## Routes:
+
+- GET list of attendances `/attendance`
+- GET one attendance by id `/attendance/${id}`
+- POST `/attendance`
+- PATCH `/attendance/${id}`
+- DELETE `/attendance/${id}`
+
 ## Useful links:
 
 - [O Que é Comando Curl e Como Usar?](https://www.hostinger.com.br/tutoriais/comando-curl-linux)
