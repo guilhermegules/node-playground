@@ -1,5 +1,10 @@
 # Express Local Library
 
+## First
+
+- Generate your credentials on [MongoDB Atlas](https://cloud.mongodb.com/)
+- Then create a `.env` with `DB_USER` and `DB_PASS`
+
 ## How run
 
 First, install all dependencies

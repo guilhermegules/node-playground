@@ -4,9 +4,12 @@ import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
 
 import indexRouter from "./routes/index.mjs";
 import usersRouter from "./routes/users.mjs";
+
+dotenv.config();
 
 const app = express();
 
