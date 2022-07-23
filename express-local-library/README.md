@@ -1,5 +1,10 @@
 # Express Local Library
 
+## First
+
+- Generate your credentials on [MongoDB](https://cloud.mongodb.com)
+- Then create a `.env` file based on `.env.example`
+
 ## How run
 
 First, install all dependencies
