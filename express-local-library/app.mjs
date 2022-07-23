@@ -3,12 +3,18 @@ import express from "express";
 import path from "path";
 import cookieParser from "cookie-parser";
 import logger from "morgan";
+import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 
 import indexRouter from "./routes/index.mjs";
 import usersRouter from "./routes/users.mjs";
+import { databaseConnectionInit } from "./config/mongodb.config.mjs";
+
+dotenv.config();
 
 const app = express();
+
+databaseConnectionInit();
 
 // view engine setup
 app.set(
@@ -31,12 +37,12 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
