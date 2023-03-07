@@ -1,0 +1,15 @@
+{
+  "name": "exchange-rate",
+  "version": "1.0.0",
+  "description": "Exchange rate with nodejs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "NodeJS"
+  ],
+  "author": "Guilherme Gules Moreira",
+  "license": "ISC"
+}
