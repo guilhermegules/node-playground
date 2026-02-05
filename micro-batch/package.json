@@ -1,0 +1,15 @@
+{
+  "name": "micro-batch",
+  "version": "1.0.0",
+  "description": "Micro batching experimentation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "Micro Batch"
+  ],
+  "author": "Guilherme Gules Moreira",
+  "license": "ISC",
+  "type": "module"
+}
